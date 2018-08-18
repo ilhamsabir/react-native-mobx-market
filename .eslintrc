@@ -1,0 +1,103 @@
+{
+	"parser": "babel-eslint",
+	"extends": "airbnb",
+	"plugins": [
+		"react",
+		"react-native",
+		"flowtype",
+		"jsx-a11y",
+		"import"
+	],
+	"rules": {
+		"quotes": [
+			1,
+			"single"
+		],
+		"indent": [
+			2,
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"semi": [
+			1,
+			"never"
+		],
+		"no-tabs": 0,
+		"arrow-parens": [
+			1,
+			"as-needed"
+		],
+		"linebreak-style": 0,
+		"max-len": [
+			2,
+			{
+				"code": 125
+			}
+		],
+		"object-curly-newline": 0,
+		"function-paren-newline": 0,
+		"import/extensions": [
+			"error",
+			"always",
+			{
+				"js": "never",
+				"vue": "never"
+			}
+		],
+		"import/no-extraneous-dependencies": [
+			"error",
+			{
+				"optionalDependencies": [
+					"test/unit/index.js"
+				]
+			}
+		],
+		"react/prop-types": 0,
+		"class-methods-use-this": 0,
+		"react/no-string-refs": 0,
+		"no-param-reassign": 0,
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [
+					".js",
+					".jsx"
+				]
+			}
+		],
+		"react/jsx-indent": [
+			2,
+			"tab"
+		],
+		"react/jsx-indent-props": [
+			2,
+			"tab"
+		],
+		"react/no-array-index-key": 0,
+		"react/no-multi-comp": 0,
+		"react/forbid-prop-types": 0,
+		"jsx-a11y/label-has-for": 0,
+		"react/sort-comp": [
+			1,
+			{
+				"order": [
+					"static-methods",
+					"lifecycle",
+					"/^on.+$/",
+					"everything-else",
+					"render"
+				]
+			}
+		],
+		"react-native/no-unused-styles": 2,
+		"react-native/split-platform-components": 2,
+		"react-native/no-inline-styles": 2,
+		"react-native/no-color-literals": 2
+	},
+	"env": {
+		"react-native/react-native": true,
+		"jest": true
+	}
+}
