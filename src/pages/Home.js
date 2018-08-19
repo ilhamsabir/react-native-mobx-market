@@ -17,22 +17,15 @@ import {
 	Thumbnail,
 } from 'native-base';
 
-import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import { observer, inject } from 'mobx-react/custom';
-import { createIconSetFromFontello } from 'react-native-vector-icons';
-import fonts from '../../font.json';
-import Carousel from 'react-native-snap-carousel';
-import Header from '../components/Header';
+import MainHeader from '../components/MainHeader';
+import SubMainHeader from '../components/SubMainHeader';
+import Slider from '../components/Slider';
+import MainCategory from '../components/MainCategory';
+import MainFooter from '../components/MainFooter';
+import PopularProducts from '../components/PopularProducts';
 
-// this for create custom icon
-const CustomIcon = createIconSetFromFontello(fonts)
-const sliderWidth = Dimensions.get('window').width;
-const itemWidth = 290;
-// const urlSlider = [
-// 	{ url: 'https://s2.bukalapak.com/uploads/flash_banner/24113/mobile/s-960-390/Banner_Mobile_Copy-rush.jpg' },
-// 	{ url: 'https://s3.bukalapak.com/uploads/flash_banner/84113/mobile/s-960-390/Banner_Mobile-payment.jpg' },
-// 	{ url: 'https://s4.bukalapak.com/uploads/flash_banner/45113/mobile/s-960-390/960_x_390-0.jpg' }
-// ]
 
 @inject('store')
 @observer
@@ -45,43 +38,22 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		console.log('data', this.props)
-	}
-
-	_renderItem({ item, index }) {
-		console.log('ca', item, index)
-		return (
-			<View style={styles.slide}>
-				<Image source={{ uri: 'http://img10.jd.id/Indonesia/nHBfsgAAAQAAABwAGD3RYwAEEKk.png' }}
-					style={styles.imgCarousel} />
-			</View>
-		);
+		console.log('data', this.props.navigation.state.routeName)
 	}
 
 	render() {
 		return (
 			<Container>
-				<Header nav={this.props.navigation}></Header>
-				<Content style={styles.content}>
-					<Grid>
-						<Col style={styles.col}>
-							<Carousel
-								ref={(c) => { this._carousel = c; }}
-								autoplay={true}
-								autoplayInterval={8000}
-								autoplayDelay={8000}
-								data={this.state.entries}
-								sliderWidth={sliderWidth}
-								itemWidth={itemWidth}
-								renderItem={this._renderItem} />
-						</Col>
-					</Grid>
-					<Grid>
-						<Col>
-							<Title>test</Title>
-						</Col>
-					</Grid>
-				</Content>
+				<MainHeader nav={this.props.navigation} />
+				<ScrollView>
+					<SubMainHeader />
+					<Slider />
+					<MainCategory />
+					<PopularProducts />
+				</ScrollView>
+				<MainFooter
+					route={this.props.navigation}
+				/>
 			</Container >
 		);
 	}
@@ -101,20 +73,6 @@ const styles = StyleSheet.create({
 		paddingBottom: 10,
 		paddingLeft: 10,
 		height: 40,
-	},
-	slide: {
-		width: itemWidth,
-		height: 150,
-		paddingTop: 0,
-		paddingBottom: 0,
-		paddingRight: 0,
-		paddingLeft: 0,
-	},
-	imgCarousel: {
-		width: null,
-		height: 135,
-		flex: 1,
-		resizeMode: 'contain'
 	},
 });
 

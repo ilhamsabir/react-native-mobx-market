@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
 	StyleSheet,
 	Text,
@@ -6,18 +6,15 @@ import {
 	View,
 	StatusBar,
 	TextInput,
-} from 'react-native';
+} from 'react-native'
 import {
 	Button,
-} from 'native-base';
-import { createIconSetFromFontello } from 'react-native-vector-icons';
-import fonts from '../../font.json';
-import color from '../assets/styles/color';
+} from 'native-base'
+import CustomIcon from './CustomIcon'
+import color from '../assets/styles/color'
 
-// this for create custom icon
-const CustomIcon = createIconSetFromFontello(fonts)
 
-class Header extends Component {
+class MainHeader extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {}
@@ -48,10 +45,10 @@ class Header extends Component {
 					</View>
 					<View style={styles.colRight}>
 						<Button transparent style={styles.btn}>
-							<CustomIcon name='chat' style={styles.actionIcon} />
-						</Button>
-						<Button transparent style={styles.btn}>
 							<CustomIcon name='alarm' style={styles.actionIcon} />
+						</Button>
+						<Button transparent style={styles.btnCart}>
+							<CustomIcon name='cart' style={styles.actionIcon} />
 						</Button>
 					</View>
 				</View >
@@ -131,6 +128,14 @@ const styles = StyleSheet.create({
 		borderWidth: 0,
 		borderColor: '#ddd',
 	},
+	btnCart: {
+		paddingTop: 6,
+		paddingRight: 5,
+		paddingBottom: 5,
+		paddingLeft: 5,
+		marginRight: 5,
+		height: 30,
+	},
 	actionIcon: {
 		textAlign: 'center',
 		fontSize: 22,
@@ -139,4 +144,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Header
+export default MainHeader
