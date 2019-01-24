@@ -4,9 +4,9 @@ import Carousel from 'react-native-snap-carousel';
 
 
 const urlSlider = [
-	{ url: 'https://s2.bukalapak.com/uploads/flash_banner/24113/mobile/s-960-390/Banner_Mobile_Copy-rush.jpg' },
-	{ url: 'https://s3.bukalapak.com/uploads/flash_banner/84113/mobile/s-960-390/Banner_Mobile-payment.jpg' },
-	{ url: 'https://s4.bukalapak.com/uploads/flash_banner/45113/mobile/s-960-390/960_x_390-0.jpg' }
+	{ url: 'https://ecs7.tokopedia.net/img/attachment/2019/1/22/25568798/25568798_f58b9a21-492f-4056-85c5-f69f001b63fa.jpg' },
+	{ url: 'https://ecs7.tokopedia.net/img/blog/promo/2018/11/Feature-Image_940x3397.jpg' },
+	{ url: 'https://ecs7.tokopedia.net/img/cache/1242/banner/2019/1/23/25618007/25618007_542f7e44-a6eb-413e-bdc0-57f1cb2a65e8.jpg' }
 ]
 
 const { width } = Dimensions.get('window')

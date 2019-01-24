@@ -30,8 +30,7 @@ class MainHeader extends Component {
 		return (
 			<View style={styles.main}>
 				<View style={styles.header}>
-					<StatusBar
-						backgroundColor={color.primary} />
+					<StatusBar backgroundColor={color.primary} />
 					<View style={styles.colLeft}>
 						<View style={styles.searchContent}>
 							<CustomIcon name='loupe' style={styles.iconSearch} />

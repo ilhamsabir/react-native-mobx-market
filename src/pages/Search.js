@@ -14,6 +14,7 @@ import {
 	Col,
 } from 'native-base';
 import { StyleSheet, Text } from 'react-native';
+import color from '../assets/styles/color'
 
 class Search extends Component {
 	constructor(props) {
@@ -29,7 +30,7 @@ class Search extends Component {
 	render() {
 		return (
 			<Container>
-				<Header>
+				<Header backgroundColor={color.primary}>
 					<Body>
 						<Title>Search</Title>
 					</Body>
